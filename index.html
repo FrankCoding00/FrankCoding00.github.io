@@ -1,149 +1,207 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>郭志霖 • 个人主页</title>
+  <title>Guo Zhilin • Personal Homepage</title>
   <style>
-    /* reset & layout */
+    /* Reset */
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Layout */
     body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background: #f0f2f5;
       font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      line-height: 1.6;
       color: #333;
-      background: #f9f9f9;
+      line-height: 1.7;
+      padding: 2rem 0;
     }
-  .container {
-    max-width: 960px;         
-    margin: 3rem auto;        
-    padding: 0 2rem;        
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-  }
-    h1, h2, h3 {
-      color: #222;
-      margin-bottom: .5rem;
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 2rem 2.5rem;
     }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; margin-top: 1.5rem; }
-    h3 { font-size: 1.2rem; margin-top: 1rem; }
+
+    /* Language switch */
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+    .lang-switch a {
+      font-size: 0.9rem;
+      color: #007acc;
+      text-decoration: none;
+    }
+    .lang-switch a:hover {
+      text-decoration: underline;
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    h3 {
+      font-size: 1.3rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.4rem;
+      color: #007acc;
+    }
+
+    /* Meta */
     p.meta {
+      text-align: center;
       color: #555;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
     }
-    section { margin-bottom: 2rem; }
-    ul { list-style: none; padding-left: 1rem; }
+    p.meta a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    /* Sections */
+    section > p {
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
     ul li {
       position: relative;
-      margin-bottom: .5rem;
+      margin-bottom: 0.6rem;
       padding-left: 1.2em;
     }
     ul li::before {
       content: "●";
       position: absolute;
       left: 0;
+      top: 0.2em;
       color: #007acc;
-      font-size: .8em;
-      line-height: 1;
-      top: .3em;
+      font-size: 0.8em;
     }
+
+    /* Links */
     a {
       color: #007acc;
       text-decoration: none;
     }
-    a:hover { text-decoration: underline; }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    /* footer */
+    /* Footer */
     footer {
       text-align: center;
-      font-size: .9rem;
+      font-size: 0.85rem;
       color: #888;
-      padding: 1rem 0;
-      border-top: 1px solid #eee;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e6e6e6;
     }
   </style>
 </head>
 <body>
   <div class="container">
+
+    <div class="lang-switch">
+      <a href="zh.html">切换到中文</a>
+    </div>
+
     <header>
-      <h1>郭志霖（Guo Zhilin）</h1>
+      <h1>Guo Zhilin</h1>
       <p class="meta">
-        男 | 20 岁 | 山东青岛&nbsp;&nbsp;
-        📱 (+86) 133 7557 9633&nbsp;|&nbsp;
-        ✉️ <a href="mailto:guozhilin.cs@mail.sdu.edu.cn">guozhilin.cs@mail.sdu.edu.cn</a>
+        Male | 20 years old | Qingdao, Shandong, China<br>
+        📱 +86 133 7557 9633 | ✉️ <a href="mailto:guozhilin.cs@mail.sdu.edu.cn">guozhilin.cs@mail.sdu.edu.cn</a>
       </p>
     </header>
 
     <section id="education">
-      <h2>教育经历</h2>
-      <p><strong>山东大学 · 计算机科学与技术（机电与信息工程学院）</strong><br>
-      本科 | 2022.09 — 2026.06</p>
+      <h2>Education</h2>
+      <p>
+        <strong>Shandong University ‧ BSc in Computer Science & Technology</strong><br>
+        School of Mechanical, Electrical & Information Engineering | Sep 2022 – Jun 2026
+      </p>
       <ul>
-        <li>GPA 90.89/100 （专业排名 9/106, 前 8.5%）</li>
-        <li>获奖：两次校级二等奖学金；两次院级“三好学生”；人工智能算法精英赛省级二等奖 (A–)</li>
-        <li>主修课程：计算机网络 (96)、离散数学 (93)、数据结构 (92)、深度学习概论 (94)</li>
+        <li>GPA 90.89/100 (Ranked 9/106, top 8.5%)</li>
+        <li>Awards: Two university-level Second-class Scholarships; Two college “Outstanding Student” awards; Provincial Second Prize in AI Algorithm Competition (A–)</li>
+        <li>Key Courses: Computer Networks (96), Discrete Mathematics (93), Data Structures (92), Introduction to Deep Learning (94)</li>
       </ul>
     </section>
 
     <section id="research">
-      <h2>科研经历</h2>
-      <h3>OpenGU · 图遗忘综合评测基准</h3>
-      <p><em>VLDB (CCF‑A) 会议在投</em></p>
+      <h2>Research Experience</h2>
+      <h3>OpenGU – Graph Unlearning Benchmark</h3>
+      <p><em>Submitted to VLDB (CCF‑A)</em></p>
       <ul>
-        <li>集成 16 种 SOTA 算法、13 个 GNN Backbones 与 37 个多域数据集</li>
-        <li>采用 3×3 实验配置，覆盖遗忘能力、效率、鲁棒性等指标</li>
-        <li>大规模实证实验，总结 8 项关键结论</li>
-        <li>负责算法调研、实验参数整理、结果分析与技术文档撰写</li>
+        <li>Integrated 16 SOTA unlearning algorithms, 13 GNN backbones, and 37 datasets</li>
+        <li>Designed 3×3 experimental setups covering forgetting ability, inference protection, efficiency, and robustness</li>
+        <li>Conducted large-scale empirical studies and distilled 8 key findings</li>
+        <li>Led algorithm survey, parameter configuration, result analysis, and documentation</li>
       </ul>
 
-      <h3>图文本攻击研究 · 融合图修改与文本攻击</h3>
-      <p><em>2025.01 — 至今</em></p>
+      <h3>Graph‐Text Joint Attacks</h3>
+      <p><em>Jan 2025 – Present</em></p>
       <ul>
-        <li>提出梯度驱动的图–文本联合攻击框架</li>
-        <li>制定攻击成功率、扰动代价与隐蔽性等评价指标</li>
-        <li>正在实现基于梯度贪心优化的算法，并在 Cora/Citeseer 上评测</li>
+        <li>Proposed gradient‐driven joint attack framework on graph‐text data</li>
+        <li>Defined metrics: attack success rate, perturbation cost, stealthiness</li>
+        <li>Implementing gradient‐greedy algorithm; evaluating on Cora/Citeseer</li>
       </ul>
     </section>
 
-    <section id="experience">
-      <h2>实习经历</h2>
-
-      <h3>中国科学院计算技术研究所 · 分布式系统监控平台（线上实习）</h3>
-      <p><em>2025.02 — 至今</em></p>
+    <section id="internships">
+      <h2>Internships</h2>
+      <h3>Institute of Computing Technology, CAS – Distributed Monitoring Platform (Remote)</h3>
+      <p><em>Feb 2025 – Present</em></p>
       <ul>
-        <li>基于 Prometheus &amp; Grafana 构建监控平台，设计端边云分布式指标采集模块</li>
-        <li>利用 PromQL 实现关键性能指标自动监控与预警</li>
-        <li>参与多层级设备指标可视化看板的核心模块开发</li>
+        <li>Built monitoring platform using Prometheus & Grafana for edge‐cloud systems</li>
+        <li>Developed PromQL queries for KPI alerting and dashboard</li>
+        <li>Designed multi‑tier device metrics visualization</li>
       </ul>
 
-      <h3>Nokia 朗讯 · 测试及前端开发助理</h3>
-      <p><em>2023.07 — 2023.08</em></p>
+      <h3>Nokia – Test & Front‐end Dev Assistant</h3>
+      <p><em>Jul 2023 – Aug 2023</em></p>
       <ul>
-        <li>负责 Tas 自动化测试平台功能开发，使用 Python 爬取并分析测试数据</li>
-        <li>参与 WebXR Data Channel 通信方案设计与实现</li>
+        <li>Developed automated test modules; scraped and analyzed test data with Python</li>
+        <li>Contributed to WebXR Data Channel design for telecom services</li>
       </ul>
 
-      <h3>青岛虚拟现实研究院 · Unity 开发实习生</h3>
-      <p><em>2024.07 — 2024.08</em></p>
+      <h3>Qingdao VR Research Institute – Unity Developer Intern</h3>
+      <p><em>Jul 2024 – Aug 2024</em></p>
       <ul>
-        <li>参与 VR 项目需求分析与整体策划</li>
-        <li>整合 Unity3D Demo，负责角色建模、场景搭建、UI 设计与交互反馈</li>
+        <li>Participated in VR project planning and requirements analysis</li>
+        <li>Integrated Unity3D demos: character models, scene setup, UI, and interaction feedback</li>
       </ul>
     </section>
 
     <section id="contact">
-      <h2>更多链接</h2>
+      <h2>Contact & Links</h2>
       <ul>
         <li><a href="https://github.com/FrankCoding00" target="_blank">GitHub</a></li>
-        <li><a href="https://orcid.org/0000-0002-1234-5678" target="_blank">ORCID</a></li>
-        <!-- 如有 Google Scholar 或 LinkedIn，可在此添加 -->
       </ul>
     </section>
 
     <footer>
-      © 2025 郭志霖 · <a href="https://FrankCoding00.github.io">FrankCoding00.github.io</a>
+      © 2025 Guo Zhilin · <a href="https://FrankCoding00.github.io">FrankCoding00.github.io</a>
     </footer>
+
   </div>
 </body>
 </html>
