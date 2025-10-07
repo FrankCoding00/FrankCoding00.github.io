@@ -1,189 +1,233 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>郭志霖 • 个人主页</title>
+  <meta name="description" content="郭志霖——图学习可信与安全：图遗忘、图-文本对抗等方向的研究与开源。NeurIPS 2025 接收；WWW 2026 在投；已保送浙江大学计算机学院网络空间安全专业硕士（导师：郑天航）。" />
   <style>
     /* Reset */
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* 背景 & 容器居中 */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      background: #f0f2f5;
-      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      color: #333;
-      line-height: 1.7;
-      padding: 2rem 0;
+    /* 主题与布局 */
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#2f2f33;
+      --muted:#69707a;
+      --line:#eaecef;
+      --brand:#0a66c2;
+      --ok:#1b8f3a;
+      --warn:#b07d00;
+      --shadow:0 6px 28px rgba(0,0,0,.08);
+      --radius:14px;
+    }
+    body{
+      display:flex; justify-content:center; align-items:flex-start;
+      min-height:100vh; background:var(--bg); color:var(--text);
+      font-family:"Segoe UI", Tahoma, Arial, sans-serif; line-height:1.7;
+      padding:2rem 1rem;
+    }
+    .container{
+      width:100%; max-width:960px; background:var(--card);
+      border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:2.2rem 2.4rem;
     }
 
-    .container {
-      width: 100%;
-      max-width: 900px;          /* 适中宽度 */
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 2rem 2.5rem;      /* 上下左右内边距 */
-    }
+    /* 语言切换（可选） */
+    .lang-switch{ text-align:right; margin-bottom:1rem; }
+    .lang-switch a{ font-size:.92rem; color:var(--brand); text-decoration:none; }
+    .lang-switch a:hover{ text-decoration:underline; }
 
     /* 标题层次 */
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
+    h1{ font-size:2.35rem; margin-bottom:.4rem; text-align:center; }
+    h2{
+      font-size:1.55rem; margin-top:2rem; padding-bottom:.35rem;
+      border-bottom:1px solid var(--line);
     }
-    h2 {
-      font-size: 1.6rem;
-      margin-top: 2rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid #e6e6e6;
-    }
-    h3 {
-      font-size: 1.3rem;
-      margin-top: 1.2rem;
-      margin-bottom: 0.4rem;
-      color: #007acc;
-    }
+    h3{ font-size:1.18rem; margin-top:1rem; margin-bottom:.35rem; color:var(--brand); }
 
     /* 个人信息 */
-    p.meta {
-      text-align: center;
-      color: #555;
-      margin-bottom: 1.8rem;
-      font-size: 0.95rem;
+    p.meta{
+      text-align:center; color:var(--muted); margin-bottom:1.5rem; font-size:.95rem;
     }
-    p.meta a {
-      color: #007acc;
-      text-decoration: none;
-    }
+    p.meta a{ color:var(--brand); text-decoration:none; }
 
     /* 段落与列表 */
-    section > p {
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style: none;
-      padding-left: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    ul li {
-      position: relative;
-      margin-bottom: 0.6rem;
-      padding-left: 1.2em;
-    }
-    ul li::before {
-      content: "●";
-      position: absolute;
-      left: 0;
-      top: 0.2em;
-      color: #007acc;
-      font-size: 0.8em;
+    section > p{ margin:.6rem 0 1rem; color:#3a3f45; }
+    ul{ list-style:none; padding-left:1.1rem; margin:.2rem 0 1rem; }
+    ul li{ position:relative; margin-bottom:.55rem; padding-left:1.1em; }
+    ul li::before{
+      content:"•"; position:absolute; left:0; top:.12em; color:var(--brand); font-weight:700;
     }
 
     /* 链接样式 */
-    a {
-      color: #007acc;
-      text-decoration: none;
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* 徽标（状态标记） */
+    .badge{
+      display:inline-block; font-size:.72rem; padding:.1rem .5rem; border-radius:999px;
+      background:#eef6ff; color:var(--brand); margin-left:.45rem; vertical-align:middle;
     }
-    a:hover {
-      text-decoration: underline;
+    .badge.ok{ background:#e9f7ef; color:var(--ok); }
+    .badge.pending{ background:#fff6e5; color:var(--warn); }
+
+    /* 页脚 */
+    footer{
+      text-align:center; font-size:.86rem; color:#8c8f96;
+      margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line);
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e6e6e6;
+    /* 小屏优化 */
+    @media (max-width:520px){
+      .container{ padding:1.6rem 1.2rem; }
+      h1{ font-size:1.9rem; }
+      h2{ font-size:1.25rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
+
+    <!-- 语言切换（若英文页为 index.html，可保留；否则删除此块） -->
+    <div class="lang-switch">
+      <a href="index.html">Switch to English</a>
+    </div>
+
     <header>
-      <h1>郭志霖（Guo Zhilin）</h1>
+      <h1>郭志霖（Guo Zhilin）</h1>
       <p class="meta">
-        男 | 20 岁 | 山东青岛&nbsp;&nbsp;
-        📱 (+86) 133 7557 9633&nbsp;|&nbsp;
-        ✉️ <a href="mailto:guozhilin.cs@mail.sdu.edu.cn">guozhilin.cs@mail.sdu.edu.cn</a>
+        男 · 20 岁 · 山东青岛（当前：<strong>大四本科生</strong>）<br />
+        📱 (+86) 133 7557 9633 · ✉️ <a href="mailto:guozhilin.cs@mail.sdu.edu.cn">guozhilin.cs@mail.sdu.edu.cn</a>
       </p>
     </header>
 
+    <!-- 概述 -->
+    <section id="about">
+      <h2>概述</h2>
+      <p>
+        我主要从事<strong>可信图学习（Trustworthy Graph Learning）</strong>与<strong>AI 安全</strong>方向研究，聚焦
+        <em>图遗忘（Graph Unlearning）</em>与<em>图–文本对抗（Graph–Text Attacks）</em>等主题。
+        已通过推免保送至<strong>浙江大学 计算机学院</strong>网络空间安全专业硕士（M.Eng.），拟入组导师：
+        <strong>郑天航 教授</strong>。
+      </p>
+    </section>
+
+    <!-- 研究兴趣 -->
+    <section id="interests">
+      <h2>研究兴趣</h2>
+      <ul>
+        <li>图遗忘与图机器学习的合规与可追责</li>
+        <li>图与图–文本模型的对抗鲁棒性与评测</li>
+        <li>可信/高效训练与可解释性评估</li>
+      </ul>
+    </section>
+
+    <!-- 教育经历 -->
     <section id="education">
       <h2>教育经历</h2>
-      <p>
-        <strong>山东大学 · 计算机科学与技术（机电与信息工程学院）</strong><br>
-        本科 | 2022.09 — 2026.06
-      </p>
+      <h3>山东大学 · 计算机科学与技术（机电与信息工程学院）</h3>
+      <p>本科 | 2022.09 — 2026.06</p>
       <ul>
-        <li>GPA 90.89/100 （专业排名 9/106，前 8.5%）</li>
-        <li>获奖：两次校级二等奖学金；两次院级“三好学生”；人工智能算法精英赛省级二等奖 (A–)</li>
-        <li>主修课程：计算机网络 (96)、离散数学 (93)、数据结构 (92)、深度学习概论 (94)</li>
+        <li>GPA 90.89/100（专业排名 9/106，前 8.5%）</li>
+        <li>获奖：两次校级二等奖学金；两次院级“三好学生”；人工智能算法精英赛省级二等奖（A–）</li>
+        <li>主修课程：计算机网络（96）、离散数学（93）、数据结构（92）、深度学习概论（94）</li>
       </ul>
     </section>
 
+    <!-- 保研录取 -->
+    <section id="admission">
+      <h2>保研录取</h2>
+      <h3>浙江大学 · 计算机学院 · 网络空间安全 专业硕士
+        <span class="badge ok">已录取（推免）</span>
+      </h3>
+      <p>导师：<strong>郑天航 教授</strong></p>
+    </section>
+
+    <!-- 学术成果 -->
+    <section id="publications">
+      <h2>学术成果</h2>
+      <ul>
+        <li>
+          <strong>OpenGU: A Comprehensive Benchmark for Graph Unlearning</strong>
+          <span class="badge ok">NeurIPS 2025 · 已接收</span>
+        </li>
+      </ul>
+
+      <h3>在投论文</h3>
+      <ul>
+        <li>
+          <strong>IMDGA（图–文本联合攻击）</strong>
+          <span class="badge pending">WWW 2026 · 在投 · 共一作者</span>
+          ——双盲评审进行中，暂不披露细节。
+        </li>
+      </ul>
+    </section>
+
+    <!-- 科研经历 -->
     <section id="research">
       <h2>科研经历</h2>
-      <h3>OpenGU · 图遗忘综合评测基准</h3>
-      <p><em>NeurIPS2025 在投</em></p>
+
+      <h3>OpenGU · 图遗忘综合评测基准
+        <span class="badge ok">NeurIPS 2025 已接收</span>
+      </h3>
       <ul>
-        <li>集成 16 种 SOTA 算法、13 个 GNN Backbones 与 37 个多域数据集</li>
-        <li>采用 3×3 实验配置，覆盖遗忘能力、效率、鲁棒性等指标</li>
-        <li>大规模实证实验，总结 8 项关键结论</li>
-        <li>负责算法调研、实验参数整理、结果分析与技术文档撰写</li>
+        <li>集成 16 种 SOTA 图遗忘算法、13 个 GNN 基座与 37 个多域数据集。</li>
+        <li>系统化实验设计覆盖遗忘能力、推断保护、效率与鲁棒性等维度。</li>
+        <li>负责算法调研、参数配置、文档撰写与大规模实证分析并凝练关键发现。</li>
       </ul>
 
-      <h3>图文本攻击研究 · 融合图修改与文本攻击</h3>
-      <p><em>2025.01 — 至今</em></p>
+      <h3>图–文本联合攻击（IMDGA）
+        <span class="badge pending">WWW 2026 在投</span>
+      </h3>
       <ul>
-        <li>提出梯度驱动的图–文本联合攻击框架</li>
-        <li>制定攻击成功率、扰动代价与隐蔽性等评价指标</li>
-        <li>正在实现基于梯度贪心优化的算法，并在 Cora/Citeseer 上评测</li>
+        <li>提出梯度驱动的结构–文本联合扰动框架，面向文本属性图。</li>
+        <li>定义指标：攻击成功率、扰动代价/比率、文本隐蔽性等。</li>
+        <li>实现基于梯度的贪心策略，并在 Cora/Citeseer 等数据集上评测。</li>
       </ul>
     </section>
 
+    <!-- 实习经历 -->
     <section id="experience">
       <h2>实习经历</h2>
-      <h3>中国科学院计算技术研究所 · 分布式系统监控平台（线上实习）</h3>
-      <p><em>2025.02 — 至今</em></p>
+
+      <h3>中国科学院计算技术研究所 · 分布式系统监控平台（线上）</h3>
+      <p><em>2025.02 — 至今</em></p>
       <ul>
-        <li>基于 Prometheus &amp; Grafana 构建监控平台，设计端边云分布式指标采集模块</li>
-        <li>利用 PromQL 实现关键性能指标自动监控与预警</li>
-        <li>参与多层级设备指标可视化看板的核心模块开发</li>
+        <li>基于 Prometheus 与 Grafana 构建端—边—云监控平台。</li>
+        <li>编写 PromQL 规则用于 KPI 监测与预警；设计核心看板。</li>
+        <li>实现多层级设备指标的可视化呈现与查询优化。</li>
       </ul>
 
-      <h3>Nokia 朗讯 · 测试及前端开发助理</h3>
-      <p><em>2023.07 — 2023.08</em></p>
+      <h3>Nokia 朗讯 · 测试与前端开发助理</h3>
+      <p><em>2023.07 — 2023.08</em></p>
       <ul>
-        <li>负责 Tas 自动化测试平台功能开发，使用 Python 爬取并分析测试数据</li>
-        <li>参与 WebXR Data Channel 通信方案设计与实现</li>
+        <li>开发自动化测试模块；以 Python 采集并分析测试数据。</li>
+        <li>参与 WebXR Data Channel 通信方案的设计与实现。</li>
       </ul>
 
       <h3>青岛虚拟现实研究院 · Unity 开发实习生</h3>
-      <p><em>2024.07 — 2024.08</em></p>
+      <p><em>2024.07 — 2024.08</em></p>
       <ul>
-        <li>参与 VR 项目需求分析与整体策划</li>
-        <li>整合 Unity3D Demo，负责角色建模、场景搭建、UI 设计与交互反馈</li>
+        <li>参与 VR 项目需求分析与总体策划。</li>
+        <li>整合 Unity3D Demo，负责角色、场景、UI 与交互反馈对接。</li>
       </ul>
     </section>
 
+    <!-- 链接 -->
     <section id="contact">
       <h2>更多链接</h2>
       <ul>
-        <li><a href="https://github.com/FrankCoding00" target="_blank">GitHub</a></li>
-        <!-- 可按需添加 Google Scholar、LinkedIn 等 -->
+        <li><a href="https://github.com/FrankCoding00" target="_blank" rel="noopener">GitHub</a></li>
+        <!-- 如需可补充：Google Scholar、个人博客/主页等 -->
       </ul>
     </section>
 
     <footer>
-      © 2025 郭志霖 · <a href="https://FrankCoding00.github.io">FrankCoding00.github.io</a>
+      © 2025 郭志霖 · <a href="https://FrankCoding00.github.io" target="_blank" rel="noopener">FrankCoding00.github.io</a>
     </footer>
+
   </div>
 </body>
 </html>
