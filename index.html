@@ -1,3 +1,4 @@
+<!-- only the relevant parts shown; you can replace your whole file with this full page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,87 +7,27 @@
   <title>Guo Zhilin • Personal Homepage</title>
   <meta name="description" content="Guo Zhilin — trustworthy graph learning, graph unlearning, and graph–text adversarial attacks." />
   <style>
-    /* ===== Reset ===== */
+    /* (styles unchanged from previous English version you used) */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ===== Theme ===== */
-    :root{
-      --bg:#f5f7fb;
-      --card:#ffffff;
-      --text:#2f2f33;
-      --muted:#69707a;
-      --line:#eaecef;
-      --brand:#0a66c2;
-      --ok:#1b8f3a;
-      --warn:#b07d00;
-      --shadow:0 6px 28px rgba(0,0,0,.08);
-      --radius:14px;
-    }
-
-    /* ===== Layout ===== */
-    body{
-      display:flex; justify-content:center; align-items:flex-start;
-      min-height:100vh; background:var(--bg); color:var(--text);
-      font-family: "Segoe UI", Tahoma, Arial, sans-serif; line-height:1.7;
-      padding:2rem 1rem;
-    }
-    .container{
-      width:100%; max-width:960px; background:var(--card);
-      border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:2.2rem 2.4rem;
-    }
-
-    /* ===== Top bar ===== */
-    .lang-switch{ text-align:right; margin-bottom:1rem; }
-    .lang-switch a{ font-size:.92rem; color:var(--brand); text-decoration:none; }
-    .lang-switch a:hover{ text-decoration:underline; }
-
-    /* ===== Headings ===== */
+    :root{ --bg:#f5f7fb; --card:#ffffff; --text:#2f2f33; --muted:#69707a; --line:#eaecef; --brand:#0a66c2; --ok:#1b8f3a; --warn:#b07d00; --shadow:0 6px 28px rgba(0,0,0,.08); --radius:14px; }
+    body{ display:flex; justify-content:center; align-items:flex-start; min-height:100vh; background:var(--bg); color:var(--text); font-family:"Segoe UI", Tahoma, Arial, sans-serif; line-height:1.7; padding:2rem 1rem; }
+    .container{ width:100%; max-width:960px; background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:2.2rem 2.4rem; }
+    .lang-switch{ text-align:right; margin-bottom:1rem; } .lang-switch a{ font-size:.92rem; color:var(--brand); text-decoration:none; } .lang-switch a:hover{ text-decoration:underline; }
     h1{ font-size:2.35rem; margin-bottom:.4rem; text-align:center; }
-    h2{
-      font-size:1.55rem; margin-top:2rem; padding-bottom:.35rem;
-      border-bottom:1px solid var(--line);
-    }
+    h2{ font-size:1.55rem; margin-top:2rem; padding-bottom:.35rem; border-bottom:1px solid var(--line); }
     h3{ font-size:1.18rem; margin-top:1rem; margin-bottom:.35rem; color:var(--brand); }
-
-    /* ===== Meta & text ===== */
-    p.meta{
-      text-align:center; color:var(--muted); margin-bottom:1.5rem; font-size:.95rem;
-    }
+    p.meta{ text-align:center; color:var(--muted); margin-bottom:1.5rem; font-size:.95rem; }
     p.meta a{ color:var(--brand); text-decoration:none; }
-    section > p{ margin:.6rem 0 1rem; color:#3a3f45; }
-
-    /* ===== Lists ===== */
-    ul{ list-style:none; padding-left:1.1rem; margin: .2rem 0 1rem; }
+    section>p{ margin:.6rem 0 1rem; color:#3a3f45; }
+    ul{ list-style:none; padding-left:1.1rem; margin:.2rem 0 1rem; }
     ul li{ position:relative; margin-bottom:.55rem; padding-left:1.1em; }
-    ul li::before{
-      content:"•"; position:absolute; left:0; top:.12em; color:var(--brand); font-weight:700;
-    }
-
-    /* ===== Links ===== */
-    a{ color:var(--brand); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    /* ===== Badges ===== */
-    .badge{
-      display:inline-block; font-size:.72rem; padding:.1rem .5rem; border-radius:999px;
-      background:#eef6ff; color:var(--brand); margin-left:.45rem; vertical-align:middle;
-    }
+    ul li::before{ content:"•"; position:absolute; left:0; top:.12em; color:var(--brand); font-weight:700; }
+    a{ color:var(--brand); text-decoration:none; } a:hover{ text-decoration:underline; }
+    .badge{ display:inline-block; font-size:.72rem; padding:.1rem .5rem; border-radius:999px; background:#eef6ff; color:var(--brand); margin-left:.45rem; vertical-align:middle; }
     .badge.ok{ background:#e9f7ef; color:var(--ok); }
     .badge.pending{ background:#fff6e5; color:var(--warn); }
-
-    /* ===== Footer ===== */
-    footer{
-      text-align:center; font-size:.86rem; color:#8c8f96;
-      margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line);
-    }
-
-    /* ===== Small screens ===== */
-    @media (max-width:520px){
-      .container{ padding:1.6rem 1.2rem; }
-      h1{ font-size:1.9rem; }
-      h2{ font-size:1.25rem; }
-    }
+    footer{ text-align:center; font-size:.86rem; color:#8c8f96; margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); }
+    @media (max-width:520px){ .container{ padding:1.6rem 1.2rem; } h1{ font-size:1.9rem; } h2{ font-size:1.25rem; } }
   </style>
 </head>
 <body>
@@ -99,13 +40,12 @@
     <header>
       <h1>Guo Zhilin</h1>
       <p class="meta">
-        Male · 20 · Qingdao, Shandong, China<br />
+        Male · <strong>21</strong> · Qingdao, Shandong, China<br />
         📱 +86&nbsp;133&nbsp;7557&nbsp;9633 · ✉️
         <a href="mailto:guozhilin.cs@mail.sdu.edu.cn">guozhilin.cs@mail.sdu.edu.cn</a>
       </p>
     </header>
 
-    <!-- ===== About ===== -->
     <section id="about">
       <h2>About</h2>
       <p>
@@ -118,7 +58,6 @@
       </p>
     </section>
 
-    <!-- ===== Research Interests ===== -->
     <section id="interests">
       <h2>Research Interests</h2>
       <ul>
@@ -128,23 +67,20 @@
       </ul>
     </section>
 
-    <!-- ===== Education & Admissions ===== -->
     <section id="education">
       <h2>Education & Admissions</h2>
 
       <h3>Shandong University — BSc in Computer Science &amp; Technology</h3>
       <p>School of Mechanical, Electrical &amp; Information Engineering · Sep&nbsp;2022 – Jun&nbsp;2026</p>
       <ul>
-        <li>GPA&nbsp;90.89/100 (Rank&nbsp;9/106, top&nbsp;8.5%)</li>
-        <li>Awards: Two university-level Second-class Scholarships; Two college “Outstanding Student” awards; Provincial Second Prize in AI Algorithm Competition (A–)</li>
-        <li>Key Courses: Computer Networks (96), Discrete Mathematics (93), Data Structures (92), Introduction to Deep Learning (94)</li>
+        <li><strong>GPA 90.71/100</strong> (Rank <strong>9/105</strong>)</li>
+        <li>Awards: Two university-level Second-class Scholarships; Two college “Outstanding Student” awards</li>
       </ul>
 
       <h3>Zhejiang University — Professional Master’s (M.Eng.), Cyberspace Security <span class="badge ok">Admitted</span></h3>
-      <p>School of Computer Science · Advisor: <strong>Prof. Tianhang Zheng</strong> (保研/推免)</p>
+      <p>School of Computer Science · Advisor: <strong>Prof. Tianhang Zheng</strong> (recommendation)</p>
     </section>
 
-    <!-- ===== Publications ===== -->
     <section id="publications">
       <h2>Publications</h2>
       <ul>
@@ -164,10 +100,58 @@
       </ul>
     </section>
 
-    <!-- ===== Research Experience ===== -->
     <section id="research">
       <h2>Research Experience</h2>
 
       <h3>OpenGU — Graph Unlearning Benchmark <span class="badge ok">NeurIPS&nbsp;2025 Accepted</span></h3>
       <ul>
-        <li>Built a large-scale benchmark integrating 16 unlearning algorithms, 13 GNN backbones, and 37
+        <li>Built a large-scale benchmark integrating 16 unlearning algorithms, 13 GNN backbones, and 37 datasets.</li>
+        <li>Designed comprehensive evaluation covering forgetting ability, inference protection, efficiency, and robustness.</li>
+        <li>Led algorithm survey, parameter configuration, documentation, and large-scale empirical analysis; distilled key findings.</li>
+      </ul>
+
+      <h3>Graph–Text Joint Attacks (IMDGA) <span class="badge pending">Under Review (WWW&nbsp;2026)</span></h3>
+      <p><em>Under double-blind review; details withheld.</em></p>
+      <!-- (Removed the previous bullet list as requested) -->
+    </section>
+
+    <section id="internships">
+      <h2>Internships</h2>
+
+      <h3>Institute of Computing Technology, CAS — Distributed Monitoring Platform (Remote)</h3>
+      <p><em>Feb&nbsp;2025 – Present</em></p>
+      <ul>
+        <li>Built an edge–cloud monitoring platform with Prometheus and Grafana.</li>
+        <li>Developed PromQL queries for KPI alerting and dashboards.</li>
+        <li>Designed multi-tier device metrics visualization.</li>
+      </ul>
+
+      <h3>Nokia — Test &amp; Front-end Dev Assistant</h3>
+      <p><em>Jul&nbsp;2023 – Aug&nbsp;2023</em></p>
+      <ul>
+        <li>Developed automated testing modules; scraped and analyzed test data in Python.</li>
+        <li>Contributed to WebXR data-channel design for telecom services.</li>
+      </ul>
+
+      <h3>Qingdao VR Research Institute — Unity Developer Intern</h3>
+      <p><em>Jul&nbsp;2024 – Aug&nbsp;2024</em></p>
+      <ul>
+        <li>Participated in VR project planning and requirements analysis.</li>
+        <li>Integrated Unity3D demos: character models, scenes, UI, and interaction feedback.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact &amp; Links</h2>
+      <ul>
+        <li><a href="https://github.com/FrankCoding00" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      © 2025 Guo&nbsp;Zhilin · <a href="https://FrankCoding00.github.io" target="_blank" rel="noopener">FrankCoding00.github.io</a>
+    </footer>
+
+  </div>
+</body>
+</html>
