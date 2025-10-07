@@ -1,120 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Guo Zhilin • Personal Homepage</title>
+  <meta name="description" content="Guo Zhilin — trustworthy graph learning, graph unlearning, and graph–text adversarial attacks." />
   <style>
-    /* Reset */
+    /* ===== Reset ===== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Layout */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      background: #f0f2f5;
-      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      color: #333;
-      line-height: 1.7;
-      padding: 2rem 0;
+    /* ===== Theme ===== */
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#2f2f33;
+      --muted:#69707a;
+      --line:#eaecef;
+      --brand:#0a66c2;
+      --ok:#1b8f3a;
+      --warn:#b07d00;
+      --shadow:0 6px 28px rgba(0,0,0,.08);
+      --radius:14px;
     }
 
-    .container {
-      width: 100%;
-      max-width: 900px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 2rem 2.5rem;
+    /* ===== Layout ===== */
+    body{
+      display:flex; justify-content:center; align-items:flex-start;
+      min-height:100vh; background:var(--bg); color:var(--text);
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif; line-height:1.7;
+      padding:2rem 1rem;
+    }
+    .container{
+      width:100%; max-width:960px; background:var(--card);
+      border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:2.2rem 2.4rem;
     }
 
-    /* Language switch */
-    .lang-switch {
-      text-align: right;
-      margin-bottom: 1rem;
+    /* ===== Top bar ===== */
+    .lang-switch{ text-align:right; margin-bottom:1rem; }
+    .lang-switch a{ font-size:.92rem; color:var(--brand); text-decoration:none; }
+    .lang-switch a:hover{ text-decoration:underline; }
+
+    /* ===== Headings ===== */
+    h1{ font-size:2.35rem; margin-bottom:.4rem; text-align:center; }
+    h2{
+      font-size:1.55rem; margin-top:2rem; padding-bottom:.35rem;
+      border-bottom:1px solid var(--line);
     }
-    .lang-switch a {
-      font-size: 0.9rem;
-      color: #007acc;
-      text-decoration: none;
+    h3{ font-size:1.18rem; margin-top:1rem; margin-bottom:.35rem; color:var(--brand); }
+
+    /* ===== Meta & text ===== */
+    p.meta{
+      text-align:center; color:var(--muted); margin-bottom:1.5rem; font-size:.95rem;
     }
-    .lang-switch a:hover {
-      text-decoration: underline;
+    p.meta a{ color:var(--brand); text-decoration:none; }
+    section > p{ margin:.6rem 0 1rem; color:#3a3f45; }
+
+    /* ===== Lists ===== */
+    ul{ list-style:none; padding-left:1.1rem; margin: .2rem 0 1rem; }
+    ul li{ position:relative; margin-bottom:.55rem; padding-left:1.1em; }
+    ul li::before{
+      content:"•"; position:absolute; left:0; top:.12em; color:var(--brand); font-weight:700;
     }
 
-    /* Headings */
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
+    /* ===== Links ===== */
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Badges ===== */
+    .badge{
+      display:inline-block; font-size:.72rem; padding:.1rem .5rem; border-radius:999px;
+      background:#eef6ff; color:var(--brand); margin-left:.45rem; vertical-align:middle;
     }
-    h2 {
-      font-size: 1.6rem;
-      margin-top: 2rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid #e6e6e6;
-    }
-    h3 {
-      font-size: 1.3rem;
-      margin-top: 1.2rem;
-      margin-bottom: 0.4rem;
-      color: #007acc;
+    .badge.ok{ background:#e9f7ef; color:var(--ok); }
+    .badge.pending{ background:#fff6e5; color:var(--warn); }
+
+    /* ===== Footer ===== */
+    footer{
+      text-align:center; font-size:.86rem; color:#8c8f96;
+      margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line);
     }
 
-    /* Meta */
-    p.meta {
-      text-align: center;
-      color: #555;
-      margin-bottom: 1.8rem;
-      font-size: 0.95rem;
-    }
-    p.meta a {
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    /* Sections */
-    section > p {
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style: none;
-      padding-left: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    ul li {
-      position: relative;
-      margin-bottom: 0.6rem;
-      padding-left: 1.2em;
-    }
-    ul li::before {
-      content: "●";
-      position: absolute;
-      left: 0;
-      top: 0.2em;
-      color: #007acc;
-      font-size: 0.8em;
-    }
-
-    /* Links */
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e6e6e6;
+    /* ===== Small screens ===== */
+    @media (max-width:520px){
+      .container{ padding:1.6rem 1.2rem; }
+      h1{ font-size:1.9rem; }
+      h2{ font-size:1.25rem; }
     }
   </style>
 </head>
@@ -128,80 +99,75 @@
     <header>
       <h1>Guo Zhilin</h1>
       <p class="meta">
-        Male | 20 years old | Qingdao, Shandong, China<br>
-        📱 +86 133 7557 9633 | ✉️ <a href="mailto:guozhilin.cs@mail.sdu.edu.cn">guozhilin.cs@mail.sdu.edu.cn</a>
+        Male · 20 · Qingdao, Shandong, China<br />
+        📱 +86&nbsp;133&nbsp;7557&nbsp;9633 · ✉️
+        <a href="mailto:guozhilin.cs@mail.sdu.edu.cn">guozhilin.cs@mail.sdu.edu.cn</a>
       </p>
     </header>
 
-    <section id="education">
-      <h2>Education</h2>
+    <!-- ===== About ===== -->
+    <section id="about">
+      <h2>About</h2>
       <p>
-        <strong>Shandong University ‧ BSc in Computer Science & Technology</strong><br>
-        School of Mechanical, Electrical & Information Engineering | Sep 2022 – Jun 2026
+        I am an undergraduate in Computer Science at Shandong University. My research centers on
+        <strong>trustworthy graph learning</strong> and <strong>AI security</strong>, with recent work on
+        <em>graph unlearning</em> and <em>graph–text adversarial attacks</em>. I have been
+        <strong>admitted via recommendation</strong> to the <em>Professional Master’s (M.Eng.) in Cyberspace Security</em>
+        at the <strong>School of Computer Science, Zhejiang University</strong>, where my prospective advisor is
+        <strong>Prof. Tianhang Zheng</strong>.
       </p>
+    </section>
+
+    <!-- ===== Research Interests ===== -->
+    <section id="interests">
+      <h2>Research Interests</h2>
       <ul>
-        <li>GPA 90.89/100 (Ranked 9/106, top 8.5%)</li>
+        <li>Graph unlearning, privacy & accountability in graph ML</li>
+        <li>Adversarial robustness for graph and graph–text models</li>
+        <li>Trustworthy AI: evaluation, metrics, and efficient training</li>
+      </ul>
+    </section>
+
+    <!-- ===== Education & Admissions ===== -->
+    <section id="education">
+      <h2>Education & Admissions</h2>
+
+      <h3>Shandong University — BSc in Computer Science &amp; Technology</h3>
+      <p>School of Mechanical, Electrical &amp; Information Engineering · Sep&nbsp;2022 – Jun&nbsp;2026</p>
+      <ul>
+        <li>GPA&nbsp;90.89/100 (Rank&nbsp;9/106, top&nbsp;8.5%)</li>
         <li>Awards: Two university-level Second-class Scholarships; Two college “Outstanding Student” awards; Provincial Second Prize in AI Algorithm Competition (A–)</li>
         <li>Key Courses: Computer Networks (96), Discrete Mathematics (93), Data Structures (92), Introduction to Deep Learning (94)</li>
       </ul>
+
+      <h3>Zhejiang University — Professional Master’s (M.Eng.), Cyberspace Security <span class="badge ok">Admitted</span></h3>
+      <p>School of Computer Science · Advisor: <strong>Prof. Tianhang Zheng</strong> (保研/推免)</p>
     </section>
 
+    <!-- ===== Publications ===== -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul>
+        <li>
+          <strong>OpenGU: A Comprehensive Benchmark for Graph Unlearning</strong>
+          <span class="badge ok">NeurIPS&nbsp;2025 · Accepted</span>
+        </li>
+      </ul>
+
+      <h3>Under Review</h3>
+      <ul>
+        <li>
+          <strong>Graph–Text Joint Attack (IMDGA)</strong>
+          <span class="badge pending">WWW&nbsp;2026 · Under Review · Co-first Author</span>
+          — details withheld due to double-blind review.
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Research Experience ===== -->
     <section id="research">
       <h2>Research Experience</h2>
-      <h3>OpenGU – Graph Unlearning Benchmark</h3>
-      <p><em>Submitted to NeurIPS2025 (under review)</em></p>
+
+      <h3>OpenGU — Graph Unlearning Benchmark <span class="badge ok">NeurIPS&nbsp;2025 Accepted</span></h3>
       <ul>
-        <li>Integrated 16 SOTA unlearning algorithms, 13 GNN backbones, and 37 datasets</li>
-        <li>Designed 3×3 experimental setups covering forgetting ability, inference protection, efficiency, and robustness</li>
-        <li>Conducted large-scale empirical studies and distilled 8 key findings</li>
-        <li>Led algorithm survey, parameter configuration, result analysis, and documentation</li>
-      </ul>
-
-      <h3>Graph‐Text Joint Attacks</h3>
-      <p><em>Jan 2025 – Present</em></p>
-      <ul>
-        <li>Proposed gradient‐driven joint attack framework on graph‐text data</li>
-        <li>Defined metrics: attack success rate, perturbation cost, stealthiness</li>
-        <li>Implementing gradient‐greedy algorithm; evaluating on Cora/Citeseer</li>
-      </ul>
-    </section>
-
-    <section id="internships">
-      <h2>Internships</h2>
-      <h3>Institute of Computing Technology, CAS – Distributed Monitoring Platform (Remote)</h3>
-      <p><em>Feb 2025 – Present</em></p>
-      <ul>
-        <li>Built monitoring platform using Prometheus & Grafana for edge‐cloud systems</li>
-        <li>Developed PromQL queries for KPI alerting and dashboard</li>
-        <li>Designed multi‑tier device metrics visualization</li>
-      </ul>
-
-      <h3>Nokia – Test & Front‐end Dev Assistant</h3>
-      <p><em>Jul 2023 – Aug 2023</em></p>
-      <ul>
-        <li>Developed automated test modules; scraped and analyzed test data with Python</li>
-        <li>Contributed to WebXR Data Channel design for telecom services</li>
-      </ul>
-
-      <h3>Qingdao VR Research Institute – Unity Developer Intern</h3>
-      <p><em>Jul 2024 – Aug 2024</em></p>
-      <ul>
-        <li>Participated in VR project planning and requirements analysis</li>
-        <li>Integrated Unity3D demos: character models, scene setup, UI, and interaction feedback</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact & Links</h2>
-      <ul>
-        <li><a href="https://github.com/FrankCoding00" target="_blank">GitHub</a></li>
-      </ul>
-    </section>
-
-    <footer>
-      © 2025 Guo Zhilin · <a href="https://FrankCoding00.github.io">FrankCoding00.github.io</a>
-    </footer>
-
-  </div>
-</body>
-</html>
+        <li>Built a large-scale benchmark integrating 16 unlearning algorithms, 13 GNN backbones, and 37
